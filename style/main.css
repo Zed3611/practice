@@ -34,9 +34,18 @@ body{
     top: 20px;
     left: 18px;
 }
+.icon:hover{
+    opacity: 1;
+}
 #main-content{
+    border-bottom-right-radius: inherit;
+    border-top-right-radius: inherit;
     height: 100%;
     width: 100%;
+    background-image: url("../img/023-astronomy 1.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-clip: content-box;
 }
 .content-block{
     position: relative;
