@@ -7,9 +7,9 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -350px 0 0 -550px;
+    margin: -400px 0 0 -550px;
     width: 1100px;
-    height: 700px;
+    height: 800px;
     background-color: white;
     border:none;
     border-radius: 40px;
@@ -92,7 +92,7 @@ body{
     border-top: lightgray 1px solid;
 }
 .content .string .name{
-    width: 130px;
+    width: 150px;
     font-weight: bold;
     color: #0A5499;
 }
