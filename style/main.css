@@ -35,6 +35,7 @@ body{
     left: 18px;
 }
 .icon:hover{
+    cursor: pointer;
     opacity: 1;
 }
 #main-content{
@@ -42,7 +43,7 @@ body{
     border-top-right-radius: inherit;
     height: 100%;
     width: 100%;
-    background-image: url("../img/023-astronomy 1.png");
+    background-image: url("../img/023-astronomy.png");
     background-repeat: no-repeat;
     background-position-x: right;
     background-clip: content-box;
@@ -104,4 +105,28 @@ body{
     width: 150px;
     font-weight: bold;
     color: #0A5499;
+}
+#general{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/007-earth 1.png");
+    background-repeat: no-repeat;
+}
+#ship{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/025-rocket 1.png");
+    background-repeat: no-repeat;
+}
+#team{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/003-aqualung 1.png");
+    background-repeat: no-repeat;
+}
+#weather{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/034-thermometer 1.png");
+    background-repeat: no-repeat;
 }
