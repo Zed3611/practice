@@ -38,12 +38,11 @@ body{
     cursor: pointer;
     opacity: 1;
 }
-#main-content{
+.main-content{
     border-bottom-right-radius: inherit;
     border-top-right-radius: inherit;
     height: 100%;
     width: 100%;
-    background-image: url("../img/023-astronomy.png");
     background-repeat: no-repeat;
     background-position-x: right;
     background-clip: content-box;
