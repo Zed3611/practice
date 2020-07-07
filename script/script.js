@@ -33,12 +33,20 @@ function mouseHover(event) {
 }
 
 function changeMainContent(icon, section) {
-    icon.active=true;
-    icon.style.opacity='1';
     g_lastIcon.active=false;
     g_lastIcon.style.opacity='0.75';
+    icon.active=true;
+    icon.style.opacity='1';
     g_lastIcon=icon;
     g_lastSection.hidden=true;
     section.hidden=false;
     g_lastSection=section;
+}
+
+function shipLocation() {
+    let blocks = document.querySelectorAll('#ship-content .inner-content .content-block');
+    let square = document.querySelector('#ship-content .inner-content');
+    let width=0;
+    for(let block of blocks)
+        width+=block.offsetWidth;
 }
