@@ -53,6 +53,7 @@ body{
     margin: 30px;
     box-shadow: black 1px 1px 5px;
     border-radius: 20px;
+    background-color: white;
 }
 #general-content .content-block{
     min-width: 500px;
