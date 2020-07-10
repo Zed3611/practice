@@ -204,6 +204,7 @@ h2{
 #ship-content .content{
     display: flex;
     min-width: 400px;
+    align-items: center;
 }
 #ship-content .inner-content .content-block .content .string:not(:nth-child(-n+1)) {
     border-top: lightgray 1px solid;
