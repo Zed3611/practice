@@ -4,28 +4,30 @@
     <meta charset="utf-8">
     <link href="style/main.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script type="text/javascript" src="script/script.js"></script>
 </head>
 <body>
     <div id="main">
 
         <div id="sidebar">
             <div id="icons">
-                <div class="icon">
-                    <img src="img/007-earth 1.png">
+                <div class="icon" id="general">
+
                 </div>
-                <div class="icon">
-                    <img src="img/025-rocket 1.png">
+                <div class="icon" id="ship">
+
                 </div>
-                <div class="icon">
-                    <img src="img/003-aqualung 1.png">
+                <div class="icon" id="team">
+
                 </div>
-                <div class="icon">
-                    <img src="img/034-thermometer 1.png">
+                <div class="icon" id="weather">
+
                 </div>
             </div>
         </div>
 
-        <div id="main-content">
+        <div class="main-content" id="general-content" style='background-image: url("img/023-astronomy.png");'>
+
             <div class="content-block">
                 <div class="top-line">
                     Статус
@@ -39,6 +41,7 @@
                     </ul>
                 </div>
             </div>
+
             <div class="content-block">
                 <div class="top-line">
                     Погодные условия
@@ -62,6 +65,249 @@
                     </div>
                 </div>
             </div>
+
+            <div class="content-block">
+                <div class="top-line">
+                    Экипаж
+                </div>
+                <div class="content">
+                    <div class="string">
+                        <div class="name" style="color: #FF7D84">Капитан</div>
+                        <div class="value">Владимир ``Молодец`` Путин</div>
+                    </div>
+                    <div class="string">
+                        <div class="name" style="color: #E69F54">Борт инженер</div>
+                        <div class="value">Терентьев Михаил ``Ну как там с деньгами`` Павлович</div>
+                    </div>
+                    <div class="string">
+                        <div class="name" style="color: #64D03F">Врач</div>
+                        <div class="value">Жак ``Футбольный мячик`` Фреско</div>
+                    </div>
+                    <div class="string">
+                        <div class="name" style="color: #5A95F2">Космодесантник</div>
+                        <div class="value">Зубенко Михаил ``Мафиозник`` Петрович</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content" id="ship-content" hidden>
+            <h2>Выбор корабля</h2>
+            <div class="content-block" id="main-rocket">
+                <div class="top-line">
+                    Корабль
+                    <button>Собрать ракету</button>
+                </div>
+                <div class="content">
+                    <img>
+                    <div class="ship-stats">
+                        <div class="string">
+                            <div class="name">Имя</div>
+                            <div class="value"></div>
+                        </div>
+                        <div class="string">
+                            <div class="name">Скорость</div>
+                            <div class="value"></div>
+                        </div>
+                        <div class="string">
+                            <div class="name">Экипаж</div>
+                            <div class="value"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="inner-content">
+                <div class="content-block">
+                    <div class="content">
+                        <img src="img/028-alien%201.png">
+                        <div class="ship-stats">
+                            <div class="string">
+                                <div class="name">Имя</div>
+                                <div class="value">Урског-123</div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Скорость</div>
+                                <div class="value">6 км/с</div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Экипаж</div>
+                                <div class="value">4</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" name="ship" id="choice-1"><label for="choice-1">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <div class="content">
+                        <img src="img/018-rocket%201.png">
+                        <div class="ship-stats">
+                            <div class="string">
+                                <div class="name">Имя</div>
+                                <div class="value">Урског-123</div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Скорость</div>
+                                <div class="value">6 км/с</div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Экипаж</div>
+                                <div class="value">3</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" name="ship" id="choice-2"><label for="choice-2">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="content-block">
+                    <div class="content">
+                        <img src="img/025-rocket%202.png">
+                        <div class="ship-stats">
+                            <div class="string">
+                                <div class="name">Имя</div>
+                                <div class="value">Сокол-345</div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Скорость</div>
+                                <div class="value">8 км/с</div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Экипаж</div>
+                                <div class="value">2</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" name="ship" id="choice-3"><label for="choice-3">Выбрать</label>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="main-content" id="team-content" hidden>
+            <h2>Сбор команды</h2>
+            <div class="top-content">
+
+                <div class="content-block">
+                    <div class="top-line">
+                        Команда
+                        <button disabled>Готово</button>
+                    </div>
+                    <div class="content">
+                        <div class="string">
+                            <div class="name" style="color: #FF7D84">Капитан</div>
+                            <div class="value"></div>
+                        </div>
+                        <div class="string">
+                            <div class="name" style="color: #E69F54">Борт-инженер</div>
+                            <div class="value"></div>
+                        </div>
+                        <div class="string">
+                            <div class="name" style="color: #64D03F">Врач</div>
+                            <div class="value"></div>
+                        </div>
+                        <div class="string">
+                            <div class="name" style="color: #5A95F2">Космодесантник</div>
+                            <div class="value"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-block" id="team-rocket">
+                    <div class="top-line">
+                        Корабль
+                    </div>
+                    <div class="content">
+                        <img>
+                        <div class="ship-stats">
+                            <div class="string">
+                                <div class="name">Имя</div>
+                                <div class="value"></div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Скорость</div>
+                                <div class="value"></div>
+                            </div>
+                            <div class="string">
+                                <div class="name">Экипаж</div>
+                                <div class="value"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="inner-content">
+                <div class="content-block">
+                    <div class="top-line" style="color: #FF7D84">Капитан</div>
+                    <div class="content">
+                        <div class="string">
+                            <div class="image"><img src="img/015-man-11%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                        <div class="string">
+                            <div class="image"><img src="img/018-man-8%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="top-line" style="color: #E69F54">Борт-инженер</div>
+                    <div class="content">
+                        <div class="string">
+                            <div class="image"><img src="img/003-woman-13%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                        <div class="string">
+                            <div class="image"><img src="img/017-man-9%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="top-line" style="color: #64D03F">Врач</div>
+                    <div class="content">
+                        <div class="string">
+                            <div class="image"><img src="img/004-woman-12%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                        <div class="string">
+                            <div class="image"><img src="img/019-man-7%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                    </div>
+                </div>
+                <div class="content-block">
+                    <div class="top-line" style="color: #5A95F2">Космодесантник</div>
+                    <div class="content">
+                        <div class="string">
+                            <div class="image"><img src="img/007-woman-9%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                        <div class="string">
+                            <div class="image"><img src="img/020-man-6%201.png"></div>
+                            <div class="name">Константин Константинопольский</div>
+                            <input type="checkbox" style="position: relative; left: 30px">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content" id="weather-content" hidden>
+            <h2>Проверка погодных условий</h2>
         </div>
 
     </div>

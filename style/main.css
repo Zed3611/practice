@@ -7,9 +7,9 @@ body{
     position: absolute;
     top: 50%;
     left: 50%;
-    margin: -350px 0 0 -550px;
+    margin: -400px 0 0 -550px;
     width: 1100px;
-    height: 700px;
+    height: 800px;
     background-color: white;
     border:none;
     border-radius: 40px;
@@ -34,17 +34,29 @@ body{
     top: 20px;
     left: 18px;
 }
-#main-content{
+.icon:hover{
+    cursor: pointer;
+    opacity: 1;
+}
+.main-content{
+    border-bottom-right-radius: inherit;
+    border-top-right-radius: inherit;
     height: 100%;
     width: 100%;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-clip: content-box;
 }
 .content-block{
-    position: relative;
-    min-width: 500px;
     width: fit-content;
+    position: relative;
     margin: 30px;
     box-shadow: black 1px 1px 5px;
     border-radius: 20px;
+    background-color: white;
+}
+#general-content .content-block{
+    min-width: 500px;
 }
 .content-block .content{
     padding: 15px;
@@ -69,7 +81,14 @@ body{
     border-radius: 10px;
     border: none;
     padding: 6px 40px 6px 40px;
+    background-color: limegreen;
+    color: white;
+    cursor: pointer;
+}
+.content-block .top-line button[disabled]{
     background-color: lightgray;
+    color: black;
+    cursor: auto;
 }
 .content .pointer{
     margin: 4px 6px 4px 4px;
@@ -88,11 +107,162 @@ body{
     display: flex;
     padding: 8px;
 }
-.content .string:not(:nth-child(-n+1)) {
+#general-content .content .string:not(:nth-child(-n+1)) {
     border-top: lightgray 1px solid;
 }
 .content .string .name{
-    width: 130px;
     font-weight: bold;
     color: #0A5499;
+}
+#general-content .content .string .name{
+    width: 150px;
+}
+#general{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/007-earth 1.png");
+    background-repeat: no-repeat;
+}
+#ship{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/025-rocket 1.png");
+    background-repeat: no-repeat;
+}
+#team{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/003-aqualung 1.png");
+    background-repeat: no-repeat;
+}
+#weather{
+    width: 85px;
+    height: 85px;
+    background-image: url("../img/034-thermometer 1.png");
+    background-repeat: no-repeat;
+}
+h2{
+    margin-left: 30px;
+}
+#ship-content .inner-content{
+    max-height: 62.5%;
+    display: flex;
+    flex-wrap: wrap;
+}
+#ship-content .inner-content .content{
+    min-width: auto;
+    width: 300px;
+}
+#ship-content .inner-content .content-block{
+    margin-top: 0;
+    border: black solid 1px;
+}
+#ship-content .content-block .choice{
+    width: 100%;
+    background-color: #D1E1FA;
+    border-bottom-right-radius: inherit;
+    border-bottom-left-radius: inherit;
+    border-top: black solid 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+}
+#ship-content .content-block .choice input[type='radio']{
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+#ship-content .content-block .choice input[type='radio'] + label {
+    position: relative;
+    cursor: pointer;
+}
+#ship-content .content-block .choice input[type='radio'] + label:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: white 1px solid;
+    background: white;
+}
+#ship-content .content-block .choice input[type='radio'] + label:after {
+    content: '';
+    position: absolute;
+    top: 1px;
+    left: -19px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #73E24D;
+    opacity: 0;
+}
+#ship-content .content-block .choice input[type='radio']:checked + label:after {
+    opacity: 1;
+}
+#ship-content .content{
+    display: flex;
+    min-width: 400px;
+    align-items: center;
+}
+#ship-content .inner-content .content-block .content .string:not(:nth-child(-n+1)) {
+    border-top: lightgray 1px solid;
+}
+#ship-content img{
+    height: fit-content;
+}
+#ship-content .string .name{
+    width: 80px;
+}
+.ship-stats{
+    margin-left: 30px;
+}
+#team-content .content-block:not(#team-rocket) .content .string{
+    padding-top:0;
+    padding-bottom: 0;
+    max-height: 40px;
+}
+#team-content .content-block:not(#team-rocket) .content .string:not(:nth-child(-n+1)) {
+    padding-top: 8px;
+}
+#team-content .top-content{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#team-content .content-block{
+    min-width: 420px;
+}
+#team-content .top-content .content-block .content .name{
+    width: 150px;
+}
+#team-rocket .top-line{
+    border-bottom: 1px lightgray solid;
+}
+#team-rocket .content{
+    display: flex;
+}
+#team-rocket img{
+    height: fit-content;
+}
+#team-content .inner-content{
+    display: grid;
+    grid-template-rows:  50% 50%;
+    grid-template-columns: 50% 50%;
+}
+#team-content .inner-content .string{
+    align-items: center;
+    border-bottom: 1px lightgray solid;
+}
+#team-content .inner-content .name{
+    color: black;
+    margin-left: 15px;
+}
+#team-content .top-content .string .value{
+    max-height: 19px;
+    margin-right: 10px;
+}
+#team-content .top-content .string img{
+    max-height: inherit;
+    margin-right: 10px;
 }
