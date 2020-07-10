@@ -51,8 +51,8 @@ body{
     width: fit-content;
     position: relative;
     margin: 30px;
-    box-shadow: black 1px 1px 5px;
-    border-radius: 20px;
+    box-shadow: grey 0 1px 3px;
+    border-radius: 10px;
     background-color: white;
 }
 #general-content .content-block{
@@ -81,7 +81,7 @@ body{
     border-radius: 10px;
     border: none;
     padding: 6px 40px 6px 40px;
-    background-color: limegreen;
+    background-color: #73E24D;
     color: white;
     cursor: pointer;
 }
