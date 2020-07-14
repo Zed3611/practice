@@ -18,6 +18,7 @@ let g_team = {};    //Кнопка готово будет активна тол
 let g_chosenShip;   //Заполняется только при сборке ракеты
 let g_lastSection;
 let g_lastIcon;
+let g_weather;
 function ready() {
     const icons = document.getElementsByClassName('icon');
     const sections = document.getElementsByClassName('main-content');
@@ -83,6 +84,44 @@ function ready() {
             });
         }
     }
+    const weatherButton = document.querySelector('#weather-content .top-content button');
+    weatherButton.addEventListener('click', async ()=>{
+        const data = await getWeatherData(document.querySelector('#weather-content .top-content input').value);
+        if(!data.ok)
+            return alert(`Ошибка\nСтатус: ${data.status}`);
+        const weatherBlock = document.querySelector('#weather-content .top-content .content');
+        for(let str of weatherBlock.getElementsByClassName('string')){
+            switch (str.getElementsByClassName('name')[0].textContent) {
+                case 'Температура':
+                    const temp=(data['temp']-273.15).toFixed(2);
+                    str.getElementsByClassName('value')[0].textContent=temp < 0 ? temp.toString() : `+${temp}`;
+                    break
+                case 'Влажность':
+                    str.getElementsByClassName('value')[0].textContent=`${data['humidity']}%`;
+                    break
+                case 'Ветер':
+                    let dir;
+                    if(data['wind']['deg']>337.5 || data['wind']['deg']<22.5)
+                        dir='С';
+                    else if(22.5<=data['wind']['deg'] && data['wind']['deg']<67.5)
+                        dir='СВ';
+                    else if(67.5<=data['wind']['deg'] && data['wind']['deg']<112.5)
+                        dir='В';
+                    else if(112.5<=data['wind']['deg'] && data['wind']['deg']<157.5)
+                        dir='ЮВ';
+                    else if(157.5<=data['wind']['deg'] && data['wind']['deg']<202.5)
+                        dir='Ю';
+                    else if(202.5<=data['wind']['deg'] && data['wind']['deg']<247.5)
+                        dir='ЮЗ';
+                    else if(247.5<=data['wind']['deg'] && data['wind']['deg']<292.5)
+                        dir='З';
+                    else if(292.5<=data['wind']['deg'] && data['wind']['deg']<337.5)
+                        dir='СЗ';
+                    str.getElementsByClassName('value')[0].textContent=`${data['wind']['speed']}м\\с, ${dir}`;
+            }
+        }
+    });
+    weatherButton.click();
 }
 
 function addImage(checkbox) {
@@ -133,4 +172,26 @@ function changeMainContent(icon, section) {
     g_lastSection.hidden=true;
     section.hidden=false;
     g_lastSection=section;
+}
+
+async function getWeatherData(cityName) {
+    let response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=67131bb1d6060b17c06dd1ea51d47a3b`);
+    if(response.ok) {
+        response = await response.json();
+        g_weather = {
+            ok: true,
+            temp: response['main']['temp'],
+            wind: {
+                speed: response['wind']['speed'],
+                deg: response['wind']['deg']
+            },
+            humidity: response['main']['humidity']
+        };
+        return g_weather;
+    }
+    else
+        return {
+            ok: false,
+            status: response.status
+        }
 }

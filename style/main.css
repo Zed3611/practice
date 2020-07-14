@@ -272,3 +272,24 @@ h2{
     max-height: inherit;
     margin-right: 10px;
 }
+#weather-content .top-content .content{
+    align-items: center;
+}
+#weather-content .top-content .name{
+    min-width: 150px;
+}
+#weather-content .top-content .content .string:not(:nth-child(-n+1)) {
+    border-top: lightgray 1px solid;
+}
+#weather-content .top-content input {
+    border: 1px solid #DEDBDB;
+    border-radius: 10px;
+    width: 200px;
+    height: 25px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    padding-left: 5px;
+}
