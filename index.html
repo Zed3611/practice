@@ -7,9 +7,9 @@
     <script type="text/javascript" src="script/script.js"></script>
 </head>
 <body>
-    <div id="main">
+    <main id="main">
 
-        <div id="sidebar">
+        <nav id="sidebar">
             <div id="icons">
                 <div class="icon" id="general">
 
@@ -24,11 +24,11 @@
 
                 </div>
             </div>
-        </div>
+        </nav>
 
-        <div class="main-content" id="general-content" style='background-image: url("img/023-astronomy.png");'>
+        <main class="main-content" id="general-content" style='background-image: url("img/023-astronomy.png");'>
 
-            <div class="content-block">
+            <section class="content-block">
                 <div class="top-line">
                     Статус
                     <button disabled>Поехали!</button>
@@ -40,9 +40,9 @@
                         <li><div class="pointer" pointer-color="green"></div>Погода - ок</li>
                     </ul>
                 </div>
-            </div>
+            </section>
 
-            <div class="content-block">
+            <section class="content-block">
                 <div class="top-line">
                     Погодные условия
                 </div>
@@ -64,9 +64,9 @@
                         <div class="value">сколько-то там чего-то там</div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="content-block">
+            <section class="content-block">
                 <div class="top-line">
                     Экипаж
                 </div>
@@ -88,12 +88,14 @@
                         <div class="value">Зубенко Михаил ``Мафиозник`` Петрович</div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </main>
 
-        <div class="main-content" id="ship-content" hidden>
-            <h2>Выбор корабля</h2>
-            <div class="content-block" id="main-rocket">
+        <main class="main-content" id="ship-content" hidden>
+            <header>
+                <h2>Выбор корабля</h2>
+            </header>
+            <section class="content-block" id="main-rocket">
                 <div class="top-line">
                     Корабль
                     <button>Собрать ракету</button>
@@ -115,10 +117,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="inner-content">
-                <div class="content-block">
+            <article class="inner-content">
+                <section class="content-block">
                     <div class="content">
                         <img src="img/028-alien%201.png">
                         <div class="ship-stats">
@@ -139,9 +141,9 @@
                     <div class="choice">
                         <input type="radio" name="ship" id="choice-1"><label for="choice-1">Выбрать</label>
                     </div>
-                </div>
+                </section>
 
-                <div class="content-block">
+                <section class="content-block">
                     <div class="content">
                         <img src="img/018-rocket%201.png">
                         <div class="ship-stats">
@@ -162,9 +164,9 @@
                     <div class="choice">
                         <input type="radio" name="ship" id="choice-2"><label for="choice-2">Выбрать</label>
                     </div>
-                </div>
+                </section>
 
-                <div class="content-block">
+                <section class="content-block">
                     <div class="content">
                         <img src="img/025-rocket%202.png">
                         <div class="ship-stats">
@@ -185,16 +187,18 @@
                     <div class="choice">
                         <input type="radio" name="ship" id="choice-3"><label for="choice-3">Выбрать</label>
                     </div>
-                </div>
+                </section>
 
-            </div>
-        </div>
+            </article>
+        </main>
 
-        <div class="main-content" id="team-content" hidden>
-            <h2>Сбор команды</h2>
-            <div class="top-content">
+        <main class="main-content" id="team-content" hidden>
+            <header>
+                <h2>Сбор команды</h2>
+            </header>
+            <article class="top-content">
 
-                <div class="content-block">
+                <section class="content-block">
                     <div class="top-line">
                         Команда
                         <button disabled>Готово</button>
@@ -217,9 +221,9 @@
                             <div class="value"></div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <div class="content-block" id="team-rocket">
+                <section class="content-block" id="team-rocket">
                     <div class="top-line">
                         Корабль
                     </div>
@@ -240,10 +244,11 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="inner-content">
-                <div class="content-block">
+                </section>
+            </article>
+
+            <article class="inner-content">
+                <section class="content-block">
                     <div class="top-line" style="color: #FF7D84">Капитан</div>
                     <div class="content">
                         <div class="string">
@@ -257,8 +262,8 @@
                             <input type="checkbox" style="position: relative; left: 30px">
                         </div>
                     </div>
-                </div>
-                <div class="content-block">
+                </section>
+                <section class="content-block">
                     <div class="top-line" style="color: #E69F54">Борт-инженер</div>
                     <div class="content">
                         <div class="string">
@@ -272,8 +277,8 @@
                             <input type="checkbox" style="position: relative; left: 30px">
                         </div>
                     </div>
-                </div>
-                <div class="content-block">
+                </section>
+                <section class="content-block">
                     <div class="top-line" style="color: #64D03F">Врач</div>
                     <div class="content">
                         <div class="string">
@@ -287,8 +292,8 @@
                             <input type="checkbox" style="position: relative; left: 30px">
                         </div>
                     </div>
-                </div>
-                <div class="content-block">
+                </section>
+                <section class="content-block">
                     <div class="top-line" style="color: #5A95F2">Космодесантник</div>
                     <div class="content">
                         <div class="string">
@@ -302,14 +307,16 @@
                             <input type="checkbox" style="position: relative; left: 30px">
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
+                </section>
+            </article>
+        </main>
 
-        <div class="main-content" id="weather-content" hidden>
-            <h2>Проверка погодных условий</h2>
-        </div>
+        <main class="main-content" id="weather-content" hidden>
+            <header>
+                <h2>Проверка погодных условий</h2>
+            </header>
+        </main>
 
-    </div>
+    </main>
 </body>
 </html>

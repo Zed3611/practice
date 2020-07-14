@@ -22,19 +22,13 @@ function ready() {
     const icons = document.getElementsByClassName('icon');
     const sections = document.getElementsByClassName('main-content');
 
-    icons[0].active=true;
+    icons[0].classList.add('active');
     g_lastIcon=icons[0];
     sections[0].hidden=false;
     g_lastSection=sections[0];
 
-    for(let i=0; i<icons.length; i++){
+    for(let i=0; i<icons.length; i++)
         icons[i].addEventListener('click', () => changeMainContent(icons[i], sections[i]));
-        icons[i].onmouseover = icons[i].onmouseout = mouseHover;
-        if(!icons[i].active){
-            icons[i].active=false;
-            icons[i].style.opacity='0.75';
-        }
-    }
 
     document.querySelector('#main-rocket button').addEventListener('click', () => {
         const rocket=document.getElementById('main-rocket');
@@ -132,23 +126,9 @@ function getShipStats(rocket) {
     return stats;
 }
 
-function mouseHover(event) {
-        switch (event.type) {
-            case 'mouseover':
-                event.target.style.opacity = '1';
-                break;
-            case 'mouseout':
-                if(!event.target.active)
-                    event.target.style.opacity = '0.75';
-                break;
-        }
-}
-
 function changeMainContent(icon, section) {
-    g_lastIcon.active=false;
-    g_lastIcon.style.opacity='0.75';
-    icon.active=true;
-    icon.style.opacity='1';
+    g_lastIcon.classList.remove('active');
+    icon.classList.add('active');
     g_lastIcon=icon;
     g_lastSection.hidden=true;
     section.hidden=false;

@@ -10,17 +10,17 @@ body{
     margin: -400px 0 0 -550px;
     width: 1100px;
     height: 800px;
-    background-color: white;
+    background-color: #F4F6F9;
     border:none;
     border-radius: 40px;
-    box-shadow: black 3px 3px 15px;
+    box-shadow: 5px 7px 40px rgba(0, 0, 0, 0.2);
     display: flex;
 }
 #sidebar{
     position: relative;
     height: 100%;
     width: 12%;
-    background-color: orangered;
+    background-color: #FF5800;
     border-bottom-left-radius: inherit;
     border-top-left-radius: inherit;
 }
@@ -34,8 +34,14 @@ body{
     top: 20px;
     left: 18px;
 }
-.icon:hover{
+.icon{
+    opacity: 0.75;
     cursor: pointer;
+}
+.icon:hover{
+    opacity: 1;
+}
+.icon.active{
     opacity: 1;
 }
 .main-content{
@@ -51,7 +57,7 @@ body{
     width: fit-content;
     position: relative;
     margin: 30px;
-    box-shadow: grey 0 1px 3px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     background-color: white;
 }
@@ -87,7 +93,7 @@ body{
 }
 .content-block .top-line button[disabled]{
     background-color: lightgray;
-    color: black;
+    color: #999999;
     cursor: auto;
 }
 .content .pointer{
