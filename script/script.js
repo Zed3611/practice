@@ -42,6 +42,7 @@ function ready() {
         teamRocket.getElementsByTagName('button')[0].remove();
 
         document.querySelector('#general-content ul li div').setAttribute('pointer-color', 'green');
+        document.getElementById('general-ship').src=g_chosenShip['icon'];
         checkFlight();
         if(g_team) {
             let length = 0;
@@ -122,7 +123,7 @@ function ready() {
     weatherButton.addEventListener('click', async ()=>{
         const data = await getWeatherData(document.querySelector('#weather-content .top-content input').value);
         if(!data.ok)
-            return alert(`Ошибка\nСтатус: ${data.status}`);
+            return alert(`Ошибка при проверке погоды\nСтатус: ${data.status}`);
         const weatherBlock = document.querySelector('#weather-content .top-content .content');
         for(let str of weatherBlock.getElementsByClassName('string')){
             switch (str.getElementsByClassName('name')[0].textContent) {
@@ -177,7 +178,13 @@ function ready() {
             }
         }
     });
-    // weatherButton.click();
+    document.querySelector('#general-content button').addEventListener('click', ()=>{
+        const ship = document.getElementById('general-ship');
+        ship.setAttribute('animated', 'true');
+        setTimeout(()=>{
+            ship.hidden=true;
+        }, 4000)
+    });
 }
 
 function addImage(checkbox) {
