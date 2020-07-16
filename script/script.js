@@ -15,6 +15,7 @@ class Rocket{
 }
 document.addEventListener("DOMContentLoaded", ready);
 let g_team = {};    //Кнопка готово будет активна только когда ракета собрана и выбрана команда
+let g_chosenTeam = {};
 let g_chosenShip;   //Заполняется только при сборке ракеты
 let g_lastSection;
 let g_lastIcon;
@@ -35,6 +36,21 @@ function ready() {
         const rocket=document.getElementById('main-rocket');
         const stats=getShipStats(rocket);
         g_chosenShip=new Rocket(stats['teamNumber'], stats['speed'], stats['name'], stats['icon']);
+
+        const teamRocket = document.getElementById('team-rocket');
+        teamRocket.innerHTML=rocket.innerHTML;
+        teamRocket.getElementsByTagName('button')[0].remove();
+
+        document.querySelector('#general-content ul li div').setAttribute('pointer-color', 'green');
+        checkFlight();
+        if(g_team) {
+            let length = 0;
+            for (let key in g_team) {
+                length += g_team[key].length;
+            }
+            if(length!==g_chosenShip.teamNumber)
+                document.querySelectorAll('#general-content ul li div')[1].setAttribute('pointer-color', 'red');
+        }
     });
 
     const rockets=document.querySelectorAll('#ship-content .inner-content .content-block');
@@ -52,9 +68,6 @@ function ready() {
                     name==='Скорость' ? 'speed' :
                         name==='Экипаж' ? 'teamNumber' : ''];
             }
-            const teamRocket = document.getElementById('team-rocket');
-            teamRocket.innerHTML=mainRocket.innerHTML;
-            teamRocket.getElementsByTagName('button')[0].remove();
         });
     }
     rockets[0].getElementsByTagName('input')[0].click();
@@ -79,11 +92,32 @@ function ready() {
                 for(let key in g_team){
                     length+=g_team[key].length;
                 }
+
                 document.querySelector('#team-content .top-content .content-block:not(#team-rocket) button')
                     .disabled = length !== Number(g_chosenShip.teamNumber);
             });
         }
     }
+
+    document.querySelector('#team-content button').addEventListener('click', ()=>{
+        g_chosenTeam=JSON.parse(JSON.stringify(g_team));
+        const team=document.querySelectorAll('#general-content .content-block')[2];
+        for(let str of team.getElementsByClassName('string')){
+            const value = str.getElementsByClassName('name')[0].textContent;
+            if(value in g_chosenTeam && g_chosenTeam[value].length>0){
+                let arr=[];
+                g_chosenTeam[value].forEach(element=>{
+                    arr.push(element.name);
+                });
+                str.getElementsByClassName('value')[0].innerHTML=arr.join(',<br>');
+            }
+            else
+                str.getElementsByClassName('value')[0].innerHTML='у нас нет такого';
+            }
+        document.querySelectorAll('#general-content ul li div')[1].setAttribute('pointer-color', 'green');
+        checkFlight();
+    });
+
     const weatherButton = document.querySelector('#weather-content .top-content button');
     weatherButton.addEventListener('click', async ()=>{
         const data = await getWeatherData(document.querySelector('#weather-content .top-content input').value);
@@ -94,10 +128,12 @@ function ready() {
             switch (str.getElementsByClassName('name')[0].textContent) {
                 case 'Температура':
                     const temp=(data['temp']-273.15).toFixed(2);
-                    str.getElementsByClassName('value')[0].textContent=temp < 0 ? temp.toString() : `+${temp}`;
+                    g_weather['temp']=temp < 0 ? temp.toString() : `+${temp}`;
+                    str.getElementsByClassName('value')[0].textContent=g_weather['temp'];
                     break
                 case 'Влажность':
-                    str.getElementsByClassName('value')[0].textContent=`${data['humidity']}%`;
+                    g_weather['humidity']=`${data['humidity']}%`;
+                    str.getElementsByClassName('value')[0].textContent=g_weather['humidity'];
                     break
                 case 'Ветер':
                     let dir;
@@ -117,11 +153,31 @@ function ready() {
                         dir='З';
                     else if(292.5<=data['wind']['deg'] && data['wind']['deg']<337.5)
                         dir='СЗ';
-                    str.getElementsByClassName('value')[0].textContent=`${data['wind']['speed']}м\\с, ${dir}`;
+                    g_weather['wind']=`${data['wind']['speed']}м\\с, ${dir}`;
+                    str.getElementsByClassName('value')[0].textContent=g_weather['wind'];
+            }
+        }
+        document.querySelectorAll('#general-content ul li div')[2].setAttribute('pointer-color', 'green');
+        checkFlight();
+        const weather=document.querySelectorAll('#general-content .content-block')[1];
+        for(let str of weather.getElementsByClassName('string')){
+            switch (str.getElementsByClassName('name')[0].textContent) {
+                case 'Локация':
+                    str.getElementsByClassName('value')[0].textContent=document.querySelector('#weather-content input').value;
+                    break
+                case 'Температура':
+                    str.getElementsByClassName('value')[0].textContent=g_weather['temp'];
+                    break
+                case 'Влажность':
+                    str.getElementsByClassName('value')[0].textContent=g_weather['humidity'];
+                    break
+                case 'Ветер':
+                    str.getElementsByClassName('value')[0].textContent=g_weather['wind'];
+                    break
             }
         }
     });
-    weatherButton.click();
+    // weatherButton.click();
 }
 
 function addImage(checkbox) {
@@ -194,4 +250,16 @@ async function getWeatherData(cityName) {
             ok: false,
             status: response.status
         }
+}
+
+function checkFlight() {
+    if(g_chosenShip && g_chosenTeam && g_weather){
+        let length = 0;
+        for (let key in g_chosenTeam) {
+            length += g_chosenTeam[key].length;
+        }
+        document.querySelector('#general-content button').disabled = length !== Number(g_chosenShip.teamNumber);
+    }
+    else
+        document.querySelector('#general-content button').disabled=true;
 }

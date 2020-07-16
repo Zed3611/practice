@@ -63,6 +63,7 @@ body{
 }
 #general-content .content-block{
     min-width: 500px;
+    max-width: 650px;
 }
 .content-block .content{
     padding: 15px;
@@ -255,6 +256,9 @@ h2{
     display: grid;
     grid-template-rows:  50% 50%;
     grid-template-columns: 50% 50%;
+}
+#team-content .inner-content .content-block{
+    width: min-content;
 }
 #team-content .inner-content .string{
     align-items: center;
