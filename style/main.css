@@ -35,8 +35,12 @@ body{
     left: 18px;
 }
 .icon{
+    width: 85px;
+    height: 85px;
     opacity: 0.75;
     cursor: pointer;
+    border: none;
+    background: none;
 }
 .icon:hover{
     opacity: 1;
@@ -73,11 +77,11 @@ body{
     padding: 15px;
     border-bottom: lightgray solid 1px;
 }
-.content-block .content ul{
+#general-block .content ul{
     padding-left: 0;
     margin: 0;
 }
-.content-block .content li{
+#general-block .content li{
     list-style-type: none;
     margin-bottom: 5px;
 }
@@ -117,7 +121,7 @@ body{
 #general-content .content .string:not(:nth-child(-n+1)) {
     border-top: lightgray 1px solid;
 }
-.content .string .name{
+.name{
     font-weight: bold;
     color: #0A5499;
 }
@@ -125,26 +129,24 @@ body{
     width: 150px;
 }
 #general{
-    width: 85px;
-    height: 85px;
     background-image: url("../img/007-earth 1.png");
     background-repeat: no-repeat;
 }
 #ship{
-    width: 85px;
-    height: 85px;
+    height: 65px;
+    width: 65px;
     background-image: url("../img/025-rocket 1.png");
     background-repeat: no-repeat;
 }
 #team{
-    width: 85px;
-    height: 85px;
+    height: 65px;
+    width: 65px;
     background-image: url("../img/003-aqualung 1.png");
     background-repeat: no-repeat;
 }
 #weather{
-    width: 85px;
-    height: 85px;
+    height: 65px;
+    width: 65px;
     background-image: url("../img/034-thermometer 1.png");
     background-repeat: no-repeat;
 }
@@ -346,4 +348,56 @@ h2{
         right: -220px;
         z-index: 2;
     }
+}
+.custom-checkbox{
+    cursor: pointer;
+    width: 100%;
+    position: relative;
+    margin-left: 15px;
+}
+.custom-checkbox input{
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+.checkmark{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    height: 15px;
+    width: 15px;
+    border: solid black 1px;
+}
+.custom-checkbox .check{
+    position: absolute;
+    top: 1px;
+    right: 11px;
+    display: none;
+}
+.custom-checkbox input:checked ~ .check{
+    display: block;
+}
+.captain-color{
+    color: #FF7D84;
+}
+.engineer-color{
+    color: #E69F54;
+}
+.doctor-color{
+    color: #64D03F;
+}
+.marine-color{
+    color: #5A95F2;
+}
+h4{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+ul{
+    padding-left: 0;
+    margin: 0;
+}
+li{
+    list-style-type: none;
 }

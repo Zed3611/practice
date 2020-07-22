@@ -75,12 +75,12 @@ function ready() {
 
     const team=document.querySelector('#team-content .inner-content');
     for(let role of team.getElementsByClassName('content-block')){
-        const roleName=role.getElementsByClassName('top-line')[0].textContent;
+        const roleName=role.getElementsByClassName('top-line')[0].textContent.replace(/\s{2,}/g, '');
         for(let person of role.getElementsByClassName('string')){
             let teamMember={
                 role: roleName,
                 icon: person.getElementsByTagName('img')[0].src,
-                name: person.getElementsByClassName('name')[0].textContent
+                name: person.getElementsByClassName('name')[0].textContent.replace(/\s{2,}/g, '')
             }
             const checkbox=person.getElementsByTagName('input')[0];
             checkbox.dataset.person=JSON.stringify(teamMember);

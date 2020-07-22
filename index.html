@@ -10,84 +10,74 @@
     <main id="main">
 
         <nav id="sidebar">
-            <div id="icons">
-                <div class="icon" id="general">
-
-                </div>
-                <div class="icon" id="ship">
-
-                </div>
-                <div class="icon" id="team">
-
-                </div>
-                <div class="icon" id="weather">
-
-                </div>
-            </div>
+            <section id="icons">
+                <button class="icon" id="general"></button>
+                <button class="icon" id="ship"></button>
+                <button class="icon" id="team"></button>
+                <button class="icon" id="weather"></button>
+            </section>
         </nav>
 
         <main class="main-content" id="general-content">
 
-            <section class="content-block">
-                <div class="top-line">
+            <section class="content-block" id="general-block">
+                <h4 class="top-line">
                     Статус
                     <button disabled>Поехали!</button>
-                </div>
-                <div class="content">
-                    <ul>
-                        <li><div class="pointer" pointer-color="red"></div>Ракета выбрана</li>
-                        <li><div class="pointer" pointer-color="red"></div>Команда собрана</li>
-                        <li><div class="pointer" pointer-color="red"></div>Погода - ок</li>
-                    </ul>
-                </div>
+                </h4>
+                <ul class="content">
+                    <li><div class="pointer" pointer-color="red"></div>Ракета выбрана</li>
+                    <li><div class="pointer" pointer-color="red"></div>Команда собрана</li>
+                    <li><div class="pointer" pointer-color="red"></div>Погода - ок</li>
+                </ul>
             </section>
 
             <section class="content-block">
-                <div class="top-line">
+                <h4 class="top-line">
                     Погодные условия
-                </div>
-                <div class="content">
-                    <div class="string">
+                </h4>
+                <ul class="content">
+                    <li class="string">
                         <div class="name">Локация</div>
                         <div class="value">где?</div>
-                    </div>
-                    <div class="string">
+                    </li>
+                    <li class="string">
                         <div class="name">Температура</div>
                         <div class="value">наверное +32</div>
-                    </div>
-                    <div class="string">
+                    </li>
+                    <li class="string">
                         <div class="name">Влажность</div>
                         <div class="value">не знаю</div>
-                    </div>
-                    <div class="string">
+                    </li>
+                    <li class="string">
                         <div class="name">Ветер</div>
                         <div class="value">тоже не знаю :(</div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </section>
 
             <section class="content-block">
-                <div class="top-line">
+                <h4 class="top-line">
                     Экипаж
-                </div>
-                <div class="content">
-                    <div class="string">
-                        <div class="name" style="color: #FF7D84">Капитан</div>
+                </h4>
+                <ul class="content">
+                    <li class="string">
+                        <div class="name captain-color">Капитан</div>
                         <div class="value"></div>
-                    </div>
-                    <div class="string">
-                        <div class="name" style="color: #E69F54">Борт-инженер</div>
+                    </li>
+                    <li class="string">
+                        <div class="name engineer-color">Борт-инженер</div>
                         <div class="value"></div>
-                    </div>
-                    <div class="string">
-                        <div class="name" style="color: #64D03F">Врач</div>
+                    </li>
+                    <li class="string">
+                        <div class="name doctor-color">Врач</div>
                         <div class="value"></div>
-                    </div>
-                    <div class="string">
-                        <div class="name" style="color: #5A95F2">Космодесантник</div>
+                    </li>
+                    <li class="string">
+                        <div class="name marine-color">Космодесантник</div>
                         <div class="value"></div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </section>
             <img id="general-ship">
             <img id="general-astronomy" src="img/023-astronomy 1.png">
@@ -98,26 +88,26 @@
                 <h2>Выбор корабля</h2>
             </header>
             <section class="content-block" id="main-rocket">
-                <div class="top-line">
+                <h4 class="top-line">
                     Корабль
                     <button>Собрать ракету</button>
-                </div>
+                </h4>
                 <div class="content">
                     <img>
-                    <div class="ship-stats">
-                        <div class="string">
+                    <ul class="ship-stats">
+                        <li class="string">
                             <div class="name">Имя</div>
                             <div class="value"></div>
-                        </div>
-                        <div class="string">
+                        </li>
+                        <li class="string">
                             <div class="name">Скорость</div>
                             <div class="value"></div>
-                        </div>
-                        <div class="string">
+                        </li>
+                        <li class="string">
                             <div class="name">Экипаж</div>
                             <div class="value"></div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </div>
             </section>
 
@@ -125,20 +115,20 @@
                 <section class="content-block">
                     <div class="content">
                         <img src="img/028-alien%201.png">
-                        <div class="ship-stats">
-                            <div class="string">
+                        <ul class="ship-stats">
+                            <li class="string">
                                 <div class="name">Имя</div>
                                 <div class="value">Урског-123</div>
-                            </div>
-                            <div class="string">
+                            </li>
+                            <li class="string">
                                 <div class="name">Скорость</div>
                                 <div class="value">6 км/с</div>
-                            </div>
-                            <div class="string">
+                            </li>
+                            <li class="string">
                                 <div class="name">Экипаж</div>
                                 <div class="value">4</div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                     <div class="choice">
                         <input type="radio" name="ship" id="choice-1"><label for="choice-1">Выбрать</label>
@@ -148,20 +138,20 @@
                 <section class="content-block">
                     <div class="content">
                         <img src="img/018-rocket%201.png">
-                        <div class="ship-stats">
-                            <div class="string">
+                        <ul class="ship-stats">
+                            <li class="string">
                                 <div class="name">Имя</div>
                                 <div class="value">Урског-123</div>
-                            </div>
-                            <div class="string">
+                            </li>
+                            <li class="string">
                                 <div class="name">Скорость</div>
                                 <div class="value">6 км/с</div>
-                            </div>
-                            <div class="string">
+                            </li>
+                            <li class="string">
                                 <div class="name">Экипаж</div>
                                 <div class="value">3</div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                     <div class="choice">
                         <input type="radio" name="ship" id="choice-2"><label for="choice-2">Выбрать</label>
@@ -171,20 +161,20 @@
                 <section class="content-block">
                     <div class="content">
                         <img src="img/025-rocket%202.png">
-                        <div class="ship-stats">
-                            <div class="string">
+                        <ul class="ship-stats">
+                            <li class="string">
                                 <div class="name">Имя</div>
                                 <div class="value">Сокол-345</div>
-                            </div>
-                            <div class="string">
+                            </li>
+                            <li class="string">
                                 <div class="name">Скорость</div>
                                 <div class="value">8 км/с</div>
-                            </div>
-                            <div class="string">
+                            </li>
+                            <li class="string">
                                 <div class="name">Экипаж</div>
                                 <div class="value">2</div>
-                            </div>
-                        </div>
+                            </li>
+                        </ul>
                     </div>
                     <div class="choice">
                         <input type="radio" name="ship" id="choice-3"><label for="choice-3">Выбрать</label>
@@ -201,34 +191,34 @@
             <article class="top-content">
 
                 <section class="content-block">
-                    <div class="top-line">
+                    <h4 class="top-line">
                         Команда
                         <button disabled>Готово</button>
-                    </div>
-                    <div class="content">
-                        <div class="string">
-                            <div class="name" style="color: #FF7D84">Капитан</div>
+                    </h4>
+                    <ul class="content">
+                        <li class="string">
+                            <div class="name captain-color">Капитан</div>
                             <div class="value"></div>
-                        </div>
-                        <div class="string">
-                            <div class="name" style="color: #E69F54">Борт-инженер</div>
+                        </li>
+                        <li class="string">
+                            <div class="name engineer-color">Борт-инженер</div>
                             <div class="value"></div>
-                        </div>
-                        <div class="string">
-                            <div class="name" style="color: #64D03F">Врач</div>
+                        </li>
+                        <li class="string">
+                            <div class="name doctor-color">Врач</div>
                             <div class="value"></div>
-                        </div>
-                        <div class="string">
-                            <div class="name" style="color: #5A95F2">Космодесантник</div>
+                        </li>
+                        <li class="string">
+                            <div class="name marine-color">Космодесантник</div>
                             <div class="value"></div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </section>
 
                 <section class="content-block" id="team-rocket">
-                    <div class="top-line">
+                    <h4 class="top-line">
                         Корабль
-                    </div>
+                    </h4>
                     <div class="content">
                         <img hidden>
                         <div class="ship-stats">
@@ -240,64 +230,144 @@
 
             <article class="inner-content">
                 <section class="content-block">
-                    <div class="top-line" style="color: #FF7D84">Капитан</div>
-                    <div class="content">
-                        <div class="string">
-                            <div class="image"><img src="img/015-man-11%201.png"></div>
-                            <div class="name">Владимир `Молодец` Путин</div>
-                            <input type="checkbox" style="position: absolute; right: 30px">
-                        </div>
-                        <div class="string">
-                            <div class="image"><img src="img/018-man-8%201.png"></div>
-                            <div class="name">Константин Константинопольский</div>
-                            <input type="checkbox" style="position: absolute; right: 30px;">
-                        </div>
-                    </div>
+                    <h4 class="top-line captain-color">
+                        Капитан
+                    </h4>
+                    <ul class="content">
+                        <li class="string">
+                            <img src="img/015-man-11%201.png">
+                            <label class="custom-checkbox name">
+                                Владимир `Молодец` Путин
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                        <li class="string">
+                            <img src="img/018-man-8%201.png">
+                            <label class="custom-checkbox name">
+                                Константин Константинопольский
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                    </ul>
                 </section>
                 <section class="content-block">
-                    <div class="top-line" style="color: #E69F54">Борт-инженер</div>
-                    <div class="content">
-                        <div class="string">
-                            <div class="image"><img src="img/003-woman-13%201.png"></div>
-                            <div class="name">Михаил `Что с деньгами` Павлович</div>
-                            <input type="checkbox" style="position: absolute; right: 30px">
-                        </div>
-                        <div class="string">
-                            <div class="image"><img src="img/017-man-9%201.png"></div>
-                            <div class="name">Константин Константинопольский</div>
-                            <input type="checkbox" style="position: absolute; right: 30px">
-                        </div>
-                    </div>
+                    <h4 class="top-line engineer-color">
+                        Борт-инженер
+                    </h4>
+                    <ul class="content">
+                        <li class="string">
+                            <img src="img/003-woman-13%201.png">
+                            <label class="custom-checkbox name">
+                                Михаил `Что с деньгами` Павлович
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                        <li class="string">
+                            <img src="img/017-man-9%201.png">
+                            <label class="custom-checkbox name">
+                                Константин Константинопольский
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                    </ul>
                 </section>
                 <section class="content-block">
-                    <div class="top-line" style="color: #64D03F">Врач</div>
-                    <div class="content">
-                        <div class="string">
-                            <div class="image"><img src="img/004-woman-12%201.png"></div>
-                            <div class="name">Жак `Футбольный мячик` Фреско</div>
-                            <input type="checkbox" style="position: absolute; right: 30px">
-                        </div>
-                        <div class="string">
-                            <div class="image"><img src="img/019-man-7%201.png"></div>
-                            <div class="name">Константин Константинопольский</div>
-                            <input type="checkbox" style="position: absolute; right: 30px">
-                        </div>
-                    </div>
+                    <h4 class="top-line doctor-color">
+                        Врач
+                    </h4>
+                    <ul class="content">
+                        <li class="string">
+                            <img src="img/004-woman-12%201.png">
+                            <label class="custom-checkbox name">
+                                Жак `Футбольный мячик` Фреско
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                        <li class="string">
+                            <img src="img/019-man-7%201.png">
+                            <label class="custom-checkbox name">
+                                Константин Константинопольский
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                    </ul>
                 </section>
                 <section class="content-block">
-                    <div class="top-line" style="color: #5A95F2">Космодесантник</div>
-                    <div class="content">
-                        <div class="string">
-                            <div class="image"><img src="img/007-woman-9%201.png"></div>
-                            <div class="name">Михаил `Мафиозник` Петрович</div>
-                            <input type="checkbox" style="position: absolute; right: 30px">
-                        </div>
-                        <div class="string">
-                            <div class="image"><img src="img/020-man-6%201.png"></div>
-                            <div class="name">Константин Константинопольский</div>
-                            <input type="checkbox" style="position: absolute; right: 30px">
-                        </div>
-                    </div>
+                    <h4 class="top-line marine-color">
+                        Космодесантник
+                    </h4>
+                    <ul class="content">
+                        <li class="string">
+                            <img src="img/007-woman-9%201.png">
+                            <label class="custom-checkbox name">
+                                Михаил `Мафиозник` Петрович
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                        <li class="string">
+                            <img src="img/020-man-6%201.png">
+                            <label class="custom-checkbox name">
+                                Константин Константинопольский
+                                <input type="checkbox">
+                                <span class="checkmark"></span>
+                                <svg height="15" width="15" class="check">
+                                    <line stroke="#73E24D" y1="6" y2="11" x1="2" x2="5"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                    <line stroke="#73E24D" y1="11" y2="3" x1="5" x2="13"
+                                          stroke-width="2px" stroke-linecap="round"></line>
+                                </svg>
+                            </label>
+                        </li>
+                    </ul>
                 </section>
             </article>
         </main>
@@ -310,35 +380,33 @@
             <article class="top-content">
 
                 <section class="content-block">
-                    <div class="top-line">
+                    <h4 class="top-line">
                         Погодные условия
                         <button>Проверить</button>
-                    </div>
-                    <div class="content">
-                        <div class="string">
+                    </h4>
+                    <ul class="content">
+                        <li class="string">
                             <div class="name">Локация</div>
                             <div class="value">
                                 <input type="text" value="Ижевск">
                             </div>
-                        </div>
-                        <div class="string">
+                        </li>
+                        <li class="string">
                             <div class="name">Температура</div>
                             <div class="value">наверное +32</div>
-                        </div>
-                        <div class="string">
+                        </li>
+                        <li class="string">
                             <div class="name">Влажность</div>
                             <div class="value">не знаю</div>
-                        </div>
-                        <div class="string">
+                        </li>
+                        <li class="string">
                             <div class="name">Ветер</div>
                             <div class="value">тоже не знаю :(</div>
-                        </div>
-                    </div>
+                        </li>
+                    </ul>
                 </section>
             </article>
-
         </main>
-
     </main>
 </body>
 </html>
